@@ -11,25 +11,31 @@ public class Kombinasyon {
         n = inp.nextInt();
         System.out.print("Bir r değeri giriniz:");
         r = inp.nextInt();
-        if ((n >= 0) && (r >= 0)) {
 
-            for (i = n; i > 0; i--) {
+        if (n > r) {
 
-                nF = nF * i;
+            if ((n >= 0) && (r >= 0)) {
+
+                for (i = n; i > 0; i--) {
+
+                    nF = nF * i;
+                }
+                for (i = (n - r); i > 0; i--) {
+
+                    a = a * i;
+                }
+                for (i = r; i > 0; i--) {
+
+                    rF = rF * i;
+                }
+                c = nF / (rF * a);
+                System.out.println(+n + " Kombinasyon " + r + " = " + c);
+
+            } else {
+                System.out.println("Girdiğiniz değerler yanlış, lütfen n ve r değerini pozitif giriniz!");
             }
-            for (i = (n - r); i > 0; i--) {
-
-                a = a * i;
-            }
-            for (i = r; i > 0; i--) {
-
-                rF = rF * i;
-            }
-            c = nF / (rF * a);
-            System.out.println(+n + " Kombinasyon " + r + " = " + c);
-
         } else {
-            System.out.println("Girdiğiniz değerler yanlış, lütfen n ve r değerini pozitif giriniz!");
+            System.out.println("Girdiğiniz değerler pozitif ve n değeri r'den büyük olmalıdır!");
         }
     }
 }
