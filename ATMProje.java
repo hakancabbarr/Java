@@ -49,6 +49,10 @@ public class ATMProje {
                 case 4:
                 System.out.println("Çıkış yapılıyor!\nEsenlikler!");
                 deneme = 0;
+                
+                default:
+                System.out.println("Yanlış Seçim yaptınız!");
+                deneme = 0;
                 }        
             }else {
                 deneme --;
